@@ -6,6 +6,16 @@ abstract class BaseController extends Controller {
 	protected $layout = 'layout.master';
 
 	/**
+	 * @var viewHelper
+	 */
+	protected $view;
+
+	public function __construct()
+	{
+		$this->view = new viewHelper();
+	}
+
+	/**
 	 * Setup the layout used by the controller.
 	 *
 	 * @return void
@@ -27,7 +37,7 @@ abstract class BaseController extends Controller {
 			$view = $controller . '.' . $action;
 		}
 
-		$this->layout->content = View::make( $view );
+		$this->layout->content = View::make( $view, $this->view->all() );
 
 		return true;
 	}
