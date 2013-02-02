@@ -64,7 +64,6 @@ return array(
 					),
 
 				'schema'   => 'public',
-				),
 		),
 
 		/*
