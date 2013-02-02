@@ -5,3 +5,7 @@ composer.lock
 
 #phpstorm
 /.idea
+
+composer.phar
+.DS_Store
+app/config/database.php

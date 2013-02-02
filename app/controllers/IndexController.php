@@ -1,6 +1,6 @@
 <?php
 
-class HomeController extends BaseController {
+class IndexController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
@@ -15,9 +15,11 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function showWelcome()
+	public function index( $name = 'random user!' )
 	{
-		return View::make('hello');
+
+		$this->view->set( 'name', $name );
+		$this->render();
 	}
 
 }
