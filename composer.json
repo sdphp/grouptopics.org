@@ -1,0 +1,10 @@
+{
+    "config": {
+        "vendor-dir": "vendor"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.3.6",
+        "laravel/framework": "4.0.*@dev"
+    }
+}
