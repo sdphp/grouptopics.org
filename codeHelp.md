@@ -1,5 +1,6 @@
 ---
 Rendering Views
+---
 
 In your controller, to add items to the view just use this (as long as you are extending the base controller)
 ```php
