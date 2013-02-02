@@ -1,10 +1,15 @@
 {
-    "config": {
-        "vendor-dir": "vendor"
-    },
-    "minimum-stability": "dev",
-    "require": {
-        "php": ">=5.3.6",
-        "laravel/framework": "4.0.*@dev"
-    }
+	"require": {
+		"laravel/framework": "4.0.*"
+	},
+	"autoload": {
+		"classmap": [
+			"app/commands",
+			"app/controllers",
+			"app/models",
+			"app/database/migrations",
+			"app/tests/TestCase.php"
+		]
+	},
+	"minimum-stability": "dev"
 }
