@@ -3,6 +3,8 @@
 		<link type="text/css" href="/assets/css/bootstrap.min.css" rel="stylesheet">
 		<link type="text/css" href="/assets/css/bootstrap-responsive.min.css" rel="stylesheet">
 		
+		<link type="text/css" href="/assets/css/global.css" rel="stylesheet">
+		
 	</head>
 	<body>
 		@include('layout.menu')
