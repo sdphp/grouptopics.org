@@ -1,2 +1,4 @@
 libraries/*
 resources/tmp/*
+vendor/*
+composer.lock
