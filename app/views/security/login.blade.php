@@ -1,17 +1,15 @@
 @section('content')
-<div class="login">
-	<form action="/login/" method="post" class="ajax" >
-		<div class="form-row">
-			<label for="email">E-Mail Address: </label>
-			<input type="text" name="email" />
-		</div>
-		<div class="form-row">
-			<label for="password">Password: </label>
-			<input type="password" name="password" />
-		</div>
-		<div class="form-row">
-			<input type="submit" class="btn btn-primary" />
-		</div>
-	</form>
+<div id="login" class='container'>
+    <form action="/login/" method="post" class="ajax">
+        <div id="form">
+            <h2>Please Sign In</h2>
+            <div class="ajaxErrors"></div>
+            <input type="text" name="email" placeholder="E-mail Address"/>
+            <input type="password" name="password" placeholder="Password"/>
+        </div>
+        <div class="form-actions">
+            <button type="submit" class="btn btn-primary">Sign In</button>
+        </div>
+    </form>
 </div>
 @stop

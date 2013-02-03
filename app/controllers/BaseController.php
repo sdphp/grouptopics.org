@@ -5,10 +5,10 @@ abstract class BaseController extends Controller {
 
 	protected $layout = 'layout.master';
 
-	/**
-	 * @var viewHelper
-	 */
-	protected $view;
+    /**
+     * @var viewHelper
+     */
+    protected $view;
 
 	public function __construct()
 	{
@@ -42,6 +42,13 @@ abstract class BaseController extends Controller {
 		return true;
 	}
 
+    protected function returnJsonResponse( array $data = array() )
+    {
+        $data = array_merge( $data, $this->view->all( ) );
+
+        return Response::json( $data );
+    }
+
 	private function parseAction()
 	{
 		$trace = debug_backtrace();
@@ -49,5 +56,10 @@ abstract class BaseController extends Controller {
 	
 		return $action[ 'function' ];
 	}
+
+    protected function generateJavascriptRoute( $route )
+    {
+        return "window.location.href = '" . URL::route( $route ) . "';";
+    }
 
 }

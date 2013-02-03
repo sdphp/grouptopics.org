@@ -3,7 +3,8 @@ $leftMenu = array(
 	'homepage' => array( 'label' => 'Home' )
 );
 $rightMenu = array(
-	'login' => array( 'label' => 'Login', 'auth' => false )
+	'login' => array( 'label' => 'Login', 'auth' => false ),
+	'logout' => array( 'label' => 'Logout', 'auth' => true ),
 );
 
 $user = Auth::user();

@@ -4,7 +4,7 @@
 
 body {
 	padding-top: 44px;
-	background: #fcfcfc;
+	background: #F5F5F5;
 }
 
 .container-fluid {
@@ -390,7 +390,7 @@ div.ui-widget-overlay {
 }
 
 /***** Nav Bar *****/
-.navbar { min-width: 1024px; z-index: 1000; }
+.navbar { min-width: 768px; z-index: 1000; }
 
 .navbar .nav > li > a { padding: 12px 20px; }
 
@@ -405,3 +405,35 @@ div.ui-widget-overlay {
 .dropdown-menu .divider { margin: 5px 1px; }
 
 navbar .btn-group { margin-top: 0; }
+
+/***** Login *****/
+
+#login { margin-top: 35px; }
+
+#login > form {
+    max-width: 400px;
+    margin: 0 auto 20px;
+    background-color:  #FFF;
+    border: 1px solid #E5E5E5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-box-shadow: 0 1px 2px rgba( 0, 0, 0, .05 );
+    -moz-box-shadow: 0 1px 2px rgba( 0, 0, 0, .05 );
+    box-shadow: 0 1px 2px rgba( 0, 0, 0, .05 );
+}
+
+#login > form .form-actions { margin-bottom: 0; }
+
+#login > form > #form {
+    padding: 19px 29px 0;
+    text-align: center;
+}
+
+#login > form > #form input {
+    font-size: 16px;
+    height: auto;
+    margin-bottom: 15px;
+    padding: 7px 9px;
+}
+
+#login > form h2 { margin-bottom: 20px; }

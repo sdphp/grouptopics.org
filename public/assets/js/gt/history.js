@@ -71,7 +71,13 @@ gt.historyObject = (function( ) {
 				success: function( data, textStatus, jqXHR ) {
 					var url = state.url.replace( window.location.origin, '' );
 
-					content.html( data );
+					if( typeof data.javascript !== "undefined" ) {
+				    	console.log( 'evaling' + data.javascript );
+					    eval( data.javascript );
+					} else {
+				    	content.html( data );
+					}
+
 					cls.showDisplay( cls );
 
 				},

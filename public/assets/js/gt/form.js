@@ -51,13 +51,15 @@ gt.form = {
 								html = '<div class="alert alert-block alert-error fade in">';
 							html += '<button type="button" class="close" data-dismiss="alert">×</button><p>';
 
+                            console.log( error );
+
 							// Form Errors
 							if( error.field == 'form' )
 							{
-								if ( error.field != '' )
-									html += '<strong>' + gt.ucwords( error.field ) + ':</strong> ';
-								html += error.message + "</p>";
-								errors.append( html ).hide().fadeIn( 'fast' );
+								html += '<strong>Error:</strong> ' + error.message + "</p>";
+								errors.append( html + "</div>" ).hide().fadeIn( 'fast' );
+
+								return;
 							}
 
 							if( typeof error.id != 'undefined' )
