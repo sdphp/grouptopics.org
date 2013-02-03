@@ -20,5 +20,7 @@ Committing To GroupTopics.org
 -----------------------------
 
 In your directory, create a branch "git checkout -b BRANCH_NAME_OF_YOUR_CHOICE", code, commit (often).
+
 When you are ready to share with others, simply run "git push" to send your updates to GitHub.
+
 When you are ready to share with GroupTopics.org, log into GitHub, choose your branch, and click "Pull Request"
