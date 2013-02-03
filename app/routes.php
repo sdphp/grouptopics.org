@@ -5,10 +5,10 @@
 | Application Routes
 |--------------------------------------------------------------------------
 |
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
+| Don't touch this file. Add routes to app/config/routes/foo.php
 |
 */
 
-Route::get('/{name?}', 'IndexController@index' );
+foreach( glob( __DIR__ . '/config/routes/*.php' ) as $file ) {
+    include( $file );
+}
