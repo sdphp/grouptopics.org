@@ -12,8 +12,8 @@ Setting up your development environment
 - You need to install composer http://getcomposer.org/download/
 - Run "php composer.phar install", this will install required modules
 - Create a mysql database, and give a user permission to it
-- Copy app/config/database.php.inc to app/config/database.php
-- Edit the mysql section of app/config/database.php, entering your personal information
+- Copy app/config/database.php to app/local/database.php
+- Edit the mysql section of app/local/database.php, entering your personal information
 - Run "php artisan migrate", this will create/update your mysql 
 
 Committing To GroupTopics.org
