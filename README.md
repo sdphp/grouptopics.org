@@ -13,6 +13,7 @@ Setting up your development environment
 - Run "php composer.phar install", this will install required modules
 - Create a mysql database, and give a user permission to it
 - Copy app/config/database.php to app/local/database.php
+- If you want oauth, copy app/config/hybridauth.php to app/local/hybridauth.php and set up that file
 - Edit the mysql section of app/local/database.php, entering your personal information
 - Run "php artisan migrate", this will create/update your mysql 
 
