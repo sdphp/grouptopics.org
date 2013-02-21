@@ -1,11 +1,13 @@
 {
 	"require": {
 		"laravel/framework": "4.0.*",
-        "jasonlewis/basset": "dev-master"
+        "jasonlewis/basset": "dev-master",
+        "hybridauth/hybridauth": "*"
 	},
 	"autoload": {
 		"classmap": [
-			"app/commands",
+            "app/commands",
+            "app/components",
 			"app/controllers",
 			"app/models",
 			"app/database/migrations",
