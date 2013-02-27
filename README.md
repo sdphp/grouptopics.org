@@ -14,6 +14,9 @@ Setting up your development environment
 - Create a mysql database, and give a user permission to it
 - Copy app/config/database.php to app/config/local/database.php
 - If you want oauth, copy app/config/hybridauth.php to app/config/local/hybridauth.php and set up that file
+-- Get Google API Keys here: https://code.google.com/apis/console/
+-- Get Twitter API Keys here: https://dev.twitter.com/apps
+-- Get Facebook API Keys here: https://developers.facebook.com
 - Edit the mysql section of app/config/local/database.php, entering your personal information
 - Run "php artisan migrate", this will create/update your mysql 
 
