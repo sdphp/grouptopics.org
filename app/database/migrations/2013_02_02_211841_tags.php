@@ -12,9 +12,8 @@ class Tags extends Migration {
 	public function up()
 	{
 		//
-        Schema::table('tags', function ($table)
+        Schema::create('tags', function ($table)
 		{
-			$table->create();
             $table->increments('id');
             $table->string('tag');
 			$table->timestamps();
