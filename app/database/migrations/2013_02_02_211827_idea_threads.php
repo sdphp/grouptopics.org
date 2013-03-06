@@ -12,14 +12,13 @@ class IdeaThreads extends Migration {
 	public function up()
 	{
 		//
-        Schema::table('idea_threads', function ($table)
+        Schema::create('idea_threads', function ($table)
 		{
-			$table->create();
             $table->increments('id');
-            $table->integer('idea_id');
+            $table->integer('idea_id')->unsigned();
 			$table->foreign('idea_id')->references('id')->on('ideas');
             $table->string('thread', 500);
-            $table->integer('user_id');
+            $table->integer('user_id')->unsigned();
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->timestamps();
 		});

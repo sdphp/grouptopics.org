@@ -12,13 +12,14 @@ class IdeaTags extends Migration {
 	public function up()
 	{
 		//
-        Schema::table('idea_tags', function ($table)
+        Schema::create('idea_tags', function ($table)
 		{
-			$table->create();
-            $table->integer('idea_id');
+			$table->increments('id');
+            $table->integer('idea_id')->unsigned();
 			$table->foreign('idea_id')->references('id')->on('ideas');
-            $table->integer('tag_id');
+            $table->integer('tag_id')->unsigned();
 			$table->foreign('tag_id')->references('id')->on('tags');
+			$table->timestamps();
 		});
 	}
 
