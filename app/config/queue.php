@@ -11,7 +11,7 @@ return array(
 	| API, giving you convenient access to each back-end using the same
 	| syntax for each one. Here you may set the default queue driver.
 	|
-	| Supported: "sync", "beanstalkd"
+	| Supported: "sync", "beanstalkd", "sqs"
 	|
 	*/
 
@@ -38,6 +38,14 @@ return array(
 			'driver' => 'beanstalkd',
 			'host'   => 'localhost',
 			'queue'  => 'default',
+		),
+
+		'sqs' => array(
+			'driver' => 'sqs',
+			'key'    => 'your-public-key',
+			'secret' => 'your-secret-key',
+			'queue'  => 'your-queue-url',
+			'region' => 'us-east-1',
 		),
 
 	),
