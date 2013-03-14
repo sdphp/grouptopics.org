@@ -1,11 +1,43 @@
-libraries/*
-resources/tmp/*
-vendor/*
-composer.lock
+<<<<<<< HEAD
+.vagrant
+package.box
 
-#phpstorm
-/.idea
+# Numerous always-ignore extensions
+*.diff
+*.err
+*.orig
+*.log
+*.rej
+*.swo
+*.swp
+*.vi
+*~
+*.sass-cache
 
-composer.phar
+# OS or Editor folders
 .DS_Store
-app/config/database.php
+Thumbs.db
+.cache
+.project
+.settings
+.tmproj
+*.esproj
+nbproject
+
+# Dreamweaver added files
+_notes
+dwsync.xml
+
+# Komodo
+*.komodoproject
+.komodotools
+
+# Folders to ignore
+.hg
+.svn
+.CVS
+.idea
+
+vendor
+composer.phar
+composer.lock
