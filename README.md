@@ -1,30 +1,54 @@
-grouptopics.org
-===============
+# Grouptopics w/ Vagrant
 
-A web app to help user groups run more efficiently
+A basic Ubuntu 10.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/grouptopics.org) and PHP 5.4.
 
-Setting up your development environment
----------------------------------------
+## Requirements
 
-- Create a github account if you don't have one
-- Fork a copy of the sdphp / grouptopics.org / master branch
-- Clone to your computer
-- You need to install composer http://getcomposer.org/download/
-- Run "php composer.phar install", this will install required modules
-- Create a mysql database, and give a user permission to it
-- Copy app/config/database.php to app/config/local/database.php
-- If you want oauth, copy app/config/hybridauth.php to app/config/local/hybridauth.php and set up that file
--- Get Google API Keys here: https://code.google.com/apis/console/
--- Get Twitter API Keys here: https://dev.twitter.com/apps
--- Get Facebook API Keys here: https://developers.facebook.com
-- Edit the mysql section of app/config/local/database.php, entering your personal information
-- Run "php artisan migrate", this will create/update your mysql 
+* VirtualBox - Free virtualization software [Downloads](https://www.virtualbox.org/wiki/Downloads)
+* Vagrant - Tool for working with virtualbox images [Vagrant Home](https://www.vagrantup.com), click on 'download now link'
+* Git - Source Control Management [Downloads](http://git-scm.com/downloads)
 
-Committing To GroupTopics.org
------------------------------
+## Quick Start - Using Vagrant
 
-In your directory, create a branch "git checkout -b BRANCH_NAME_OF_YOUR_CHOICE", code, commit (often).
+You can set up a development virtual machine running Grouptopics by following these simple instructions.
 
-When you are ready to share with others, simply run "git push" to send your updates to GitHub.
+1. Install requirements. (Note: these are not required by joind.in itself, but are required for this quick start guide.)
+   - VirtualBox (https://www.virtualbox.org/) (versions 4.0 and 4.1 are currently supported)
+   - Ruby (http://www.ruby-lang.org/)
+   - Vagrant (http://vagrantup.com/)
 
-When you are ready to share with GroupTopics.org, log into GitHub, choose your branch, and click "Pull Request"
+2. Clone repository to any location and fetch required submodules (containing Puppet manifests).
+
+        git clone https://github.com/sdphp/grouptopics.org
+        cd grouptopics
+
+3. Start the process by running Vagrant.
+
+        vagrant up
+
+4. Add hostname to /etc/hosts.
+
+        echo "127.0.0.1 dev.gt " | sudo tee -a /etc/hosts
+
+5. Browse to the newly provisioned development copy of joind.in.
+
+        open http://dev.gt:8080
+
+### Using Vagrant
+
+Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but here are a few common commands:
+
+* `vagrant up` starts the virtual machine and provisions it
+* `vagrant suspend` will essentially put the machine to 'sleep' with `vagrant resume` waking it back up
+* `vagrant halt` attempts a graceful shutdown of the machine and will need to be brought back with `vagrant up`
+* `vagrant ssh` gives you shell access to the virtual machine
+
+
+##### Virtual Machine Specifications #####
+
+* OS     - Ubuntu 10.04
+* Apache - 2.2.22
+* PHP    - 5.3.2
+* MySQL  - 5.5.28
+
+Phpmyadmin is available [http://dev.gt:8080/phpmyadmin/](http://dev.gt:8080/phpmyadmin/). User `root`, Password `root`
