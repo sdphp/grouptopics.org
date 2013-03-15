@@ -17,10 +17,10 @@ You can set up a development virtual machine running Grouptopics by following th
    - Ruby (http://www.ruby-lang.org/)
    - Vagrant (http://vagrantup.com/)
 
-2. Clone repository to any location and fetch required submodules (containing Puppet manifests).
+2. Clone repository
 
         git clone https://github.com/sdphp/grouptopics.org
-        cd grouptopics
+        cd grouptopics.org
 
 3. Start the process by running Vagrant.
 
