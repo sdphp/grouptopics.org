@@ -1,6 +1,6 @@
 # Grouptopics w/ Vagrant
 
-A basic Ubuntu 11.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/grouptopics.org), Apache 2, MySQL 5.5.29, PHP 5.3.10.
+A basic Ubuntu 12.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/grouptopics.org), Apache 2, MySQL 5.5.29, PHP 5.3.10.
 
 ## Requirements
 
@@ -51,12 +51,15 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 
 ##### Virtual Machine Specifications #####
 
-* OS     - Ubuntu 11.04
+* OS     - Ubuntu 12.04
 * Apache - 2.2.22
-* PHP    - 5.3.2
-* MySQL  - 5.5.28
+* PHP    - 5.3.10
+* MySQL  - 5.5.29
 
 Phpmyadmin is available [http://dev.gt:8080/phpmyadmin/](http://dev.gt:8080/phpmyadmin/). User `root`, Password `root`
+Database can be connected to from host system using port 8086 
+
+        mysql -h dev.gt -P 8086 -u root -p
 
 After getting all this set up, read the site readme [here](https://github.com/sdphp/grouptopics.org/blob/master/site/README.md).
 
