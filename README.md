@@ -26,9 +26,14 @@ You can set up a development virtual machine running Grouptopics by following th
 
         vagrant up
 
-4. Add hostname to /etc/hosts.
+4. Add hostname to your host file.
+   If you are on Linux, run this:
 
-        echo "\n127.0.0.1 dev.gt " | sudo tee -a /etc/hosts
+        sudo echo "\n127.0.0.1 dev.gt" >> /etc/hosts
+        
+   If you are on Windows, run this on the cmd line
+   
+        echo 127.0.0.1 dev.gt >> %SYSTEMDRIVE%\Windows\System32\Drivers\Etc\Hosts
 
 5. Browse to the newly provisioned development copy of grouptopics.
 
