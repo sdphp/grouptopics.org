@@ -13,7 +13,7 @@ A basic Ubuntu 11.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/gr
 You can set up a development virtual machine running Grouptopics by following these simple instructions.
 
 1. Install requirements. (Note: these are not required by grouptopics itself, but are required for this quick start guide.)
-   - VirtualBox (https://www.virtualbox.org/) (versions 4.0, 4.1, and 4.2 are currently supported)
+   - VirtualBox (https://www.virtualbox.org/) (versions 4.0 and 4.1 are currently supported)
    - Ruby (http://www.ruby-lang.org/)
    - Vagrant (http://vagrantup.com/)
 
@@ -29,7 +29,7 @@ You can set up a development virtual machine running Grouptopics by following th
 4. Add hostname to your host file.
    If you are on Linux, run this:
 
-        sudo echo "\n127.0.0.1 dev.gt" >> /etc/hosts
+        echo "\n127.0.0.1 dev.gt" | sudo tee -a /etc/hosts
         
    If you are on Windows, run this on the cmd line
    
