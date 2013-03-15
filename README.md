@@ -1,6 +1,6 @@
 # Grouptopics w/ Vagrant
 
-A basic Ubuntu 11.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/grouptopics.org) and PHP 5.4.
+A basic Ubuntu 11.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/grouptopics.org), Apache 2, MySQL 5.5.29, PHP 5.3.10.
 
 ## Requirements
 
