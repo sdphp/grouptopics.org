@@ -96,5 +96,5 @@ return array(
 
 	'cookie' => 'laravel_session',
 
-	'domain' => 'www.grouptopics.org',
+	'domain' => 'dev.gt',
 );
