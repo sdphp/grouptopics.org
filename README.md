@@ -53,10 +53,11 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 
 Phpmyadmin is available [http://dev.gt:8080/phpmyadmin/](http://dev.gt:8080/phpmyadmin/). User `root`, Password `root`
 
+After getting all this set up, read the site readme [here](https://github.com/sdphp/grouptopics.org/blob/master/site/README.md).
+
 ##### Contributors (Add yourself below) #####
 * John Congdon <john@sdphp.org>
 * Eric Van Johnson <eric@sdphp.org>
 * Aaron Scherer <aaron@sdphp.org>
-* William Cahill-Manley <william@sdphp.org>
 * Stephane Deuvaert <stephane@techaround.com>
 * Dennis Slade <tennisbear@gmail.com>
