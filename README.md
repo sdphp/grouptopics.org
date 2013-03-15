@@ -55,3 +55,4 @@ Phpmyadmin is available [http://dev.gt:8080/phpmyadmin/](http://dev.gt:8080/phpm
 
 ##### Contributors (Add yourself below) #####
 Stephane Deuvaert stephane@techaround.com
+Dennis Slade tennisbear@gmail.com
