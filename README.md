@@ -52,3 +52,6 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 * MySQL  - 5.5.28
 
 Phpmyadmin is available [http://dev.gt:8080/phpmyadmin/](http://dev.gt:8080/phpmyadmin/). User `root`, Password `root`
+
+##### Contributors (Add yourself below) #####
+Stephane Deuvaert stephane@techaround.com
