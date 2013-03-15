@@ -12,7 +12,7 @@ A basic Ubuntu 10.04 Vagrant setup for [Grouptopics](https://github.com/sdphp/gr
 
 You can set up a development virtual machine running Grouptopics by following these simple instructions.
 
-1. Install requirements. (Note: these are not required by joind.in itself, but are required for this quick start guide.)
+1. Install requirements. (Note: these are not required by grouptopics itself, but are required for this quick start guide.)
    - VirtualBox (https://www.virtualbox.org/) (versions 4.0 and 4.1 are currently supported)
    - Ruby (http://www.ruby-lang.org/)
    - Vagrant (http://vagrantup.com/)
@@ -30,7 +30,7 @@ You can set up a development virtual machine running Grouptopics by following th
 
         echo "127.0.0.1 dev.gt " | sudo tee -a /etc/hosts
 
-5. Browse to the newly provisioned development copy of joind.in.
+5. Browse to the newly provisioned development copy of grouptopics.
 
         open http://dev.gt:8080
 
@@ -46,7 +46,7 @@ Vagrant is [very well documented](http://vagrantup.com/v1/docs/index.html) but h
 
 ##### Virtual Machine Specifications #####
 
-* OS     - Ubuntu 10.04
+* OS     - Ubuntu 11.04
 * Apache - 2.2.22
 * PHP    - 5.3.2
 * MySQL  - 5.5.28
