@@ -28,7 +28,7 @@ You can set up a development virtual machine running Grouptopics by following th
 
 4. Add hostname to /etc/hosts.
 
-        echo "127.0.0.1 dev.gt " | sudo tee -a /etc/hosts
+        echo "\n127.0.0.1 dev.gt " | sudo tee -a /etc/hosts
 
 5. Browse to the newly provisioned development copy of grouptopics.
 
