@@ -10,6 +10,4 @@
 */
 
 
-Route::group(array('as' => 'indexRoutes'), function () {
-    Route::get('/', array('as' => 'homepage', 'uses' => 'IndexController@index'));
-});
+Route::get('/', array('as' => 'homepage', 'uses' => 'IndexController@index'));
