@@ -105,7 +105,11 @@ return array(
 		'Illuminate\Translation\TranslationServiceProvider',
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
-		'Illuminate\Workbench\WorkbenchServiceProvider',
+        'Illuminate\Workbench\WorkbenchServiceProvider',
+        'Basset\BassetServiceProvider',
+        'Way\Generators\GeneratorsServiceProvider',
+        'Barryvdh\Debugbar\ServiceProvider',
+        'Clockwork\Support\Laravel\ClockworkServiceProvider',
 
 	),
 
@@ -137,7 +141,8 @@ return array(
 
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
-		'Auth'            => 'Illuminate\Support\Facades\Auth',
+        'Auth'            => 'Illuminate\Support\Facades\Auth',
+        'Basset'          => 'Basset\Facade',
 		'Blade'           => 'Illuminate\Support\Facades\Blade',
 		'Cache'           => 'Illuminate\Support\Facades\Cache',
 		'ClassLoader'     => 'Illuminate\Support\ClassLoader',
@@ -145,7 +150,8 @@ return array(
 		'Controller'      => 'Illuminate\Routing\Controller',
 		'Cookie'          => 'Illuminate\Support\Facades\Cookie',
 		'Crypt'           => 'Illuminate\Support\Facades\Crypt',
-		'DB'              => 'Illuminate\Support\Facades\DB',
+        'DB'              => 'Illuminate\Support\Facades\DB',
+        'Debugbar'        => 'Barryvdh\Debugbar\Facade',
 		'Eloquent'        => 'Illuminate\Database\Eloquent\Model',
 		'Event'           => 'Illuminate\Support\Facades\Event',
 		'File'            => 'Illuminate\Support\Facades\File',

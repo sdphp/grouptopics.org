@@ -1,21 +1,23 @@
-## Laravel PHP Framework
+## Grouptopics
 
-[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
+Grouptopics is a Open Source Project started by the San Diego PHP (SDPHP) User group. It's designed to help other User Groups discover and manage presentation ideas.
+This project is very early in development and not ready for prime time.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
+Grouptopics is built using **[Laravel](https://packagist.org/packages/laravel/framework)**. Documentation for the Laravel framework can be found on the [Laravel website](http://laravel.com/docs).
 
-Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
+## Running and Contributing
 
-Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
+### Contributing
+* SDPHP Group is the maintainer of Grouptopics. If you wish to contribute to Grouptopics you should [fork](https://help.github.com/articles/fork-a-repo) the project from [SDPHP/Grouptopics](https://github.com/sdphp/grouptopics.org) Github Repo
+* Make code modifcations and enhancments to your copy of the Grouptopics repo and submit a pull requet back to SDPHP Grouptopics to have your changes merged into the master branch.
 
-## Official Documentation
+### Running
+* Change into your repos directory and run ```composer install```
+* Copy ```app/config/database-template.php``` to ```app/config/database.php``` and modify to meet your needs
+* Run application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```
+* Run ```php artisian migrate``` to create your tables
+* Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp ```npm install gulp``` and run ```gulp``` from the commandline
 
-Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
+## License
 
-### Contributing To Laravel
-
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
-
-### License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+Currently Grouptopics is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
