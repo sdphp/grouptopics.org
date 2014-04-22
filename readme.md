@@ -40,7 +40,7 @@ return [
 ];
 ```
 
-* Set the following envars in ```.env.php``` and set the following to run a development version:
+* Create (or edit)  ```.env.php```  file in your project root that contains the corresponding database values for you system:
 
 ```
 <?php
