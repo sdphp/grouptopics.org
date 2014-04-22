@@ -9,13 +9,58 @@ Grouptopics is built using **[Laravel](https://packagist.org/packages/laravel/fr
 
 ### Contributing
 * SDPHP Group is the maintainer of Grouptopics. If you wish to contribute to Grouptopics you should [fork](https://help.github.com/articles/fork-a-repo) the project from [SDPHP/Grouptopics](https://github.com/sdphp/grouptopics.org) Github Repo
-* Make code modifcations and enhancments to your copy of the Grouptopics repo and submit a pull requet back to SDPHP Grouptopics to have your changes merged into the master branch.
+* Make code modifications and enhancements to your copy of the Grouptopics repo and submit a pull request back to SDPHP Grouptopics to have your changes merged into the master branch.
 
 ### Running
+
 * Change into your repos directory and run ```composer install```
-* Create ```app/config/development/database.php``` and enter credentials for your local environment - Laravel will now default to development if ```ENV``` is not set.
-* Run application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```
+
+* Create ```app/config/development/database.php``` and enter your credentials for your local environment. See below:
+
+```
+<?php
+
+return [
+
+	'connections' => array(
+
+		'mysql' => array(
+			'driver'    => 'mysql',
+			'host'      => getenv('DB_HOST'),
+			'database'  => getenv('DB_NAME'),
+			'username'  => getenv('DB_USER'),
+			'password'  => getenv('DB_PASS'),
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => 'gt_',
+		),
+
+	)
+
+];
+```
+
+* Set the following envars in ```.env.php``` and set the following to run a development version:
+
+```
+<?php
+
+	putenv("ENV=development");
+	// ENV not required as laravel will default to development without it
+
+	putenv("DB_HOST=localhost");
+
+	putenv("DB_USER=username");
+
+	putenv("DB_NAME=databasename");
+
+	putenv("DB_PASS=password");
+```
+
+* Run the application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```
+
 * Run ```php artisian migrate``` to create your tables
+
 * Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp ```npm install gulp``` and run ```gulp``` from the commandline
 
 ## License
