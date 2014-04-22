@@ -4,7 +4,7 @@ class AccountRepository
 {
 	public function getAccountByUserId($id)
 	{
-		return User::find($id);
+		return \User::find($id);
 	}
 
 	public function createNewAccount()
@@ -37,9 +37,31 @@ class AccountRepository
 
 		}
 
-		return Redirect::to('/signup')->withErrors($validator);
+		return \Redirect::to('/signup')->withErrors($validator);
 
 	}
+
+	public function loginExistingAccount()
+	{
+
+		$input = \Input::all();
+
+		$attempt = \Auth::attempt([
+			'email' 	=> $input['email'],
+			'password' 	=> $input['password']
+		]);
+
+		if ($attempt) return \Redirect::intended('/');
+
+
+	}
+
+	public function logoutExistingAccount()
+	{
+		\Auth::logout();
+		return \Redirect::to('/');
+	}
+
 
 	public function emailNewAccount()
 	{
@@ -48,7 +70,7 @@ class AccountRepository
 
 	public function testMe()
 	{
-		return "in the repo!";
+		return "I'm in the Grouptopics\Respositories\AccountRepository!";
 	}
 
 }

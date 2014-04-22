@@ -4,7 +4,8 @@
 Route::get('/', 'ViewController@index');
 Route::get('/login', 'AccountController@login');
 Route::get('/signup', 'AccountController@signup');
-Route::get('/my', 'AccountController@index')->before('Auth');
+Route::get('/account', 'AccountController@index')->before('auth');
+Route::get('/logout', 'AccountController@destroy');
 
 // JUNK - for testing specific functions as needed
 Route::get('utils', function()
@@ -17,14 +18,6 @@ Route::get('utils', function()
 
 });
 
-
-
 // POST requests
-
-// Route::post('/signup', 'AccountController@register');
-
-// DEV WORK
-
-// Route::get('/signup', 'AccountController@signup');
-
-Route::post('/signup', 'AccountController@store');
+Route::post('/signup', 'AccountController@create');
+Route::post('/login', 'AccountController@store');

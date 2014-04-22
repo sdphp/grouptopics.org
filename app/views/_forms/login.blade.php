@@ -1,30 +1,23 @@
-<form class="form-horizontal">
-<fieldset>
+{{ Form::open(array('url' => 'login')) }}
 
-<!-- Text input-->
-<div class="form-group">
-  <label class="col-md-8 control-label" for="emailAddress">Email</label>
-  <div class="col-md-8">
-  <input id="emailAddress" name="emailAddress" type="text" placeholder="yourname@gmail.com" class="form-control input-md" required="">
+  <div class="form-group">
 
-  </div>
-</div>
-
-<!-- Password input-->
-<div class="form-group">
-  <label class="col-md-8 control-label" for="password">Password</label>
-  <div class="col-md-8">
-    <input id="password" name="password" type="password" placeholder="Sup3rSecretSqu11r3l" class="form-control input-md" required="">
+    {{ Form::label('email', 'E-Mail Address') }}
+    {{ Form::text('email', null, array('class' => 'form-control')) }}
+    {{ $errors->first('email', '<span class="error">:message</span>') }}
 
   </div>
-</div>
 
-<!-- Button -->
-<div class="form-group">
-  <div class="col-md-8">
-    <button id="signup" name="signup" class="btn btn-primary col-md-12">Button</button>
+  <div class="form-group">
+
+    {{ Form::label('password', 'Password') }}
+    {{ Form::password('password', array('class' => 'form-control')) }}
+    {{ $errors->first('password', '<span class="error">:message</span>') }}
+
   </div>
-</div>
 
-</fieldset>
+  {{ Form::submit('Login') }}
+
 </form>
+
+{{ Form::close() }}

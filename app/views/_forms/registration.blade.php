@@ -3,32 +3,31 @@
   <div class="form-group">
 
     {{ Form::label('name', 'Name') }}
-    {{ Form::text('name') }}
-    {{ $errors->first('name', '<span class="error">:message</span>') }}
+    {{ Form::text('name', null, array('class' => 'form-control')) }}
+    {{ $errors->first('name', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 
   <div class="form-group">
 
   	{{ Form::label('email', 'E-Mail Address') }}
-    {{ Form::text('email'); }}
-    {{ $errors->first('email', '<span class="error">:message</span>') }}
+    {{ Form::text('email', null, array('class' => 'form-control')) }}
+    {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 
   <div class="form-group">
 
   	{{ Form::label('password', 'Password') }}
-    {{ Form::password('password') }}
-    {{ $errors->first('password', '<span class="error">:message</span>') }}
+    {{ Form::password('password', array('class' => 'form-control')) }}
 
   </div>
 
   <div class="form-group">
 
     {{ Form::label('password_confirmation', 'Password confirmation') }}
-    {{ Form::password('password_confirmation') }}
-    {{ $errors->first('password_confirmation', '<span class="error">:message</span>') }}
+    {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
+    {{ $errors->first('password', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 

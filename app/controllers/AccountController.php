@@ -13,12 +13,6 @@ class AccountController extends BaseController
 
 	public function index()
 	{
-
-		return View::make('account');
-	}
-
-	public function show($id)
-	{
 		return View::make('account');
 	}
 
@@ -27,9 +21,23 @@ class AccountController extends BaseController
 		return View::make('signup');
 	}
 
-	public function store()
+	public function login()
+	{
+		return View::make('login');
+	}
+
+	public function create()
 	{
 		return $this->account->createNewAccount();
+	}
+
+	public function store()
+	{
+		return $this->account->loginExistingAccount();
+	}
+	public function destroy()
+	{
+		return $this->account->logoutExistingAccount();
 	}
 
 	public function testMe()
