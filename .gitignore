@@ -6,5 +6,7 @@ composer.lock
 .env.php
 .DS_Store
 Thumbs.db
-/app/config/database.php
-app/config/database.php
+app/development
+puphpet
+Vagrantfile
+.vagrant
