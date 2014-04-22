@@ -13,7 +13,7 @@ Grouptopics is built using **[Laravel](https://packagist.org/packages/laravel/fr
 
 ### Running
 * Change into your repos directory and run ```composer install```
-* Copy ```app/config/database-template.php``` to ```app/config/database.php``` and modify to meet your needs
+* Create ```app/config/development/database.php``` and enter credentials for your local environment - Laravel will now default to development if ```ENV``` is not set.
 * Run application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```
 * Run ```php artisian migrate``` to create your tables
 * Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp ```npm install gulp``` and run ```gulp``` from the commandline
