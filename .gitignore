@@ -8,3 +8,8 @@ composer.lock
 Thumbs.db
 /app/config/database.php
 app/config/database.php
+/app/config/development
+/app/storage/logs
+puphpet
+Vagrantfile
+.vagrant
