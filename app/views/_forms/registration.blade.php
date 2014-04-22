@@ -1,11 +1,39 @@
-<form role="form">
+{{ Form::open(array('url' => 'signup')) }}
+
   <div class="form-group">
-    <label for="exampleInputEmail1">Email address</label>
-    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+
+    {{ Form::label('name', 'Name') }}
+    {{ Form::text('name') }}
+    {{ $errors->first('name', '<span class="error">:message</span>') }}
+
   </div>
+
   <div class="form-group">
-    <label for="exampleInputPassword1">Password</label>
-    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+
+  	{{ Form::label('email', 'E-Mail Address') }}
+    {{ Form::text('email'); }}
+    {{ $errors->first('email', '<span class="error">:message</span>') }}
+
   </div>
-  <button type="submit" class="btn btn-primary pull-right">Signup</button>
+
+  <div class="form-group">
+
+  	{{ Form::label('password', 'Password') }}
+    {{ Form::password('password') }}
+    {{ $errors->first('password', '<span class="error">:message</span>') }}
+
+  </div>
+
+  <div class="form-group">
+
+    {{ Form::label('password_confirmation', 'Password confirmation') }}
+    {{ Form::password('password_confirmation') }}
+    {{ $errors->first('password_confirmation', '<span class="error">:message</span>') }}
+
+  </div>
+
+  {{ Form::submit('Sign up!') }}
+
 </form>
+
+{{ Form::close() }}
