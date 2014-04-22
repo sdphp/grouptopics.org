@@ -11,7 +11,6 @@
 |
 */
 
-Route::get('/', function()
-{
-	return View::make('hello');
-});
+Route::get('/', 'ViewController@index');
+Route::get('/login', 'AccountController@store');
+Route::get('/signup', 'AccountController@create');
