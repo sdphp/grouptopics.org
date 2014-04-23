@@ -26,10 +26,10 @@ return [
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => getenv('DB_HOST'),
-			'database'  => getenv('DB_NAME'),
-			'username'  => getenv('DB_USER'),
-			'password'  => getenv('DB_PASS'),
+			'host'      => '<YOUR DB HOSTNAME>',
+			'database'  => '<YOUR DB NAME>',
+			'username'  => '<YOUR DB USERNAME>',
+			'password'  => '<YOUR DB PASSWORD>',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => 'gt_',
@@ -38,23 +38,6 @@ return [
 	)
 
 ];
-```
-
-* Set the following envars in ```.env.php``` and set the following to run a development version:
-
-```
-<?php
-
-	putenv("ENV=development");
-	// ENV not required as laravel will default to development without it
-
-	putenv("DB_HOST=localhost");
-
-	putenv("DB_USER=username");
-
-	putenv("DB_NAME=databasename");
-
-	putenv("DB_PASS=password");
 ```
 
 * Run the application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```

@@ -8,4 +8,8 @@ class ViewController extends BaseController
 		return View::make('index');
 	}
 
+	public function about()
+	{
+		return View::make('about');
+	}
 }
