@@ -2,6 +2,7 @@
 
 // GET requests
 Route::get('/', 'ViewController@index');
+Route::get('/about', 'ViewController@about');
 Route::get('/login', 'AccountController@login');
 Route::get('/signup', 'AccountController@signup');
 Route::get('/account', 'AccountController@index')->before('auth');

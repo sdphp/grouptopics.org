@@ -13,3 +13,4 @@ app/config/database.php
 puphpet
 Vagrantfile
 .vagrant
+tags
