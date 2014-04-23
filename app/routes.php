@@ -11,10 +11,11 @@ Route::get('/logout', 'AccountController@destroy');
 Route::get('utils', function()
 {
 	// dd mysql configuration from database.php
-	// dd(Config::get('database.connections.mysql'));
+	dd(Config::get('database.connections.mysql'));
+	// dd(App::environment());
 
-	$users = User::all();
-	dd($users);
+	// $users = User::all();
+	// dd($users);
 
 });
 
