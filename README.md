@@ -9,7 +9,7 @@ Grouptopics is built using **[Laravel](https://packagist.org/packages/laravel/fr
 
 ### Contributing
 * SDPHP Group is the maintainer of Grouptopics. If you wish to contribute to Grouptopics you should [fork](https://help.github.com/articles/fork-a-repo) the project from [SDPHP/Grouptopics](https://github.com/sdphp/grouptopics.org) Github Repo
-* Make code modifications and enhancements to your copy of the Grouptopics repo and submit a pull request back to SDPHP Grouptopics to have your changes merged into the master branch.
+* Read [CONTRIBUTING.md](CONTRIBUTING.md) for more information
 
 ### Running
 
