@@ -32,6 +32,7 @@ class Account
             'password' 	=> 'required|alpha_num|confirmed|min:8'
         );
 
+        // TODO throw exceptions for if an email already exists
         $validator = Validator::make($input, $rules);
 
         if ($validator->passes()) {
