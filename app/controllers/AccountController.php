@@ -11,14 +11,14 @@ class AccountController extends BaseController
     protected $account;
 
     public function __construct(Account $account)
-	{
-		$this->account = $account;
-	}
+    {
+        $this->account = $account;
+    }
 
     public function account()
-	{
-		return View::make('account');
-	}
+    {
+        return View::make('account');
+    }
 
     public function accountSettings()
     {
@@ -26,29 +26,29 @@ class AccountController extends BaseController
     }
 
     public function signup()
-	{
-		return View::make('signup');
-	}
+    {
+        return View::make('signup');
+    }
 
     public function login()
-	{
-		return View::make('login');
-	}
+    {
+        return View::make('login');
+    }
 
     public function create()
-	{
-		return $this->account->createNewAccount();
-	}
+    {
+        return $this->account->createNewAccount();
+    }
 
     public function store()
-	{
-		return $this->account->loginExistingAccount();
-	}
+    {
+        return $this->account->loginExistingAccount();
+    }
 
     public function actionLogout()
-	{
-		return $this->account->logoutExistingAccount();
-	}
+    {
+        return $this->account->logoutExistingAccount();
+    }
 
     public function showAccountById($id)
     {

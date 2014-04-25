@@ -11,71 +11,73 @@ class Account
 {
 
     public function getAccountByUserId($id)
-	{
-		return User::find($id);
-	}
+    {
+        return User::find($id);
+    }
 
-	public function getAccountByUsername($username)
-	{
-		return $username;
-	}
+    public function getAccountByUsername($username)
+    {
+        return $username;
+    }
 
     public function createNewAccount()
-	{
-		$input = Input::all();
+    {
+        $input = Input::all();
 
-		$user = new User;
+        $user = new User;
 
-		$rules = array(
-			'name'   	=> 'required|min:5|max:125',
-			'email'     => 'required|email',
-			'password' 	=> 'required|alpha_num|confirmed|min:8'
-		);
+        $rules = array(
+            'name'   	=> 'required|min:5|max:125',
+            'email'     => 'required|email',
+            'password' 	=> 'required|alpha_num|confirmed|min:8'
+        );
 
-	    $validator = Validator::make($input, $rules);
+        $validator = Validator::make($input, $rules);
 
-	    if ($validator->passes()) {
+        if ($validator->passes()) {
 
-	    	$user->name = Input::get('name');
-	        $user->email = Input::get('email');
-	        $user->password = Hash::make(Input::get('password'));
+        	$user->name = Input::get('name');
+            $user->email = Input::get('email');
+            $user->password = Hash::make(Input::get('password'));
 
-	    	$user->save();
+        	$user->save();
 
-	    	// log the user in
-	    	$credentials = array(
-				'email' => Input::get('email'),
-				'password' => Input::get('password')
-			);
+        	// log the user in
+        	$credentials = array(
+                'email' => Input::get('email'),
+                'password' => Input::get('password')
+            );
 
-			if (Auth::attempt($credentials)) {
-				return Redirect::route('auth.account');
-			}
-		}
+            if (Auth::attempt($credentials)) {
+                return Redirect::route('auth.account');
+            }
+        }
 
-		return Redirect::route('signup')->withErrors($validator);
-	}
+        return Redirect::route('signup')->withErrors($validator);
+    }
 
     public function loginExistingAccount()
-	{
-		$input = Input::all();
+    {
+        $input = Input::all();
 
-		$attempt = Auth::attempt([
-			'email' 	=> $input['email'],
-			'password' 	=> $input['password']
-		]);
+        $attempt = Auth::attempt([
+            'email' 	=> $input['email'],
+            'password' 	=> $input['password']
+        ]);
 
-		if ($attempt) return Redirect::intended('/account');
-	}
+        if ($attempt) {
+            return Redirect::intended('/account');
+        }
+    }
 
     public function logoutExistingAccount()
-	{
-		Auth::logout();
-		return Redirect::route('home');
-	}
+    {
+        Auth::logout();
+        return Redirect::route('home');
+    }
 
     public function emailNewAccount()
-	{
-		// TODO - make this work!
-	}
+    {
+        // TODO - make this work!
+    }
 }
