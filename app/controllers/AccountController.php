@@ -1,48 +1,70 @@
 <?php
 
-use Grouptopics\Repositories\AccountRepository;
+use Grouptopics\Libraries\Account;
 
+/**
+ * Class AccountController
+ */
 class AccountController extends BaseController
 {
-	protected $account;
 
-	public function __construct(AccountRepository $account)
-	{
-		$this->account = $account;
-	}
+    protected $account;
 
-	public function index()
-	{
-		return View::make('account');
-	}
+    public function __construct(Account $account)
+    {
+        $this->account = $account;
+    }
 
-	public function signup()
-	{
-		return View::make('signup');
-	}
+    public function account()
+    {
+        return View::make('account');
+    }
 
-	public function login()
-	{
-		return View::make('login');
-	}
+    public function accountSettings()
+    {
+        return View::make('account_settings');
+    }
 
-	public function create()
-	{
-		return $this->account->createNewAccount();
-	}
+    public function signup()
+    {
+        return View::make('signup');
+    }
 
-	public function store()
-	{
-		return $this->account->loginExistingAccount();
-	}
-	public function destroy()
-	{
-		return $this->account->logoutExistingAccount();
-	}
+    public function login()
+    {
+        return View::make('login');
+    }
 
-	public function testMe()
-	{
-		return "Grouptopics\Repositories\AccountRepository";
-	}
+    public function create()
+    {
+        return $this->account->createNewAccount();
+    }
+
+    public function store()
+    {
+        return $this->account->loginExistingAccount();
+    }
+
+    public function actionLogout()
+    {
+        return $this->account->logoutExistingAccount();
+    }
+
+    public function showAccountById($id)
+    {
+        $user = User::find($id);
+        return $user->name;
+    }
+
+    public function showAccountByUsername($username)
+    {
+        $user = User::find($username);
+        return $user->name;
+    }
+
+    public function profileView($username)
+    {
+        return $username;
+    }
 
 }
