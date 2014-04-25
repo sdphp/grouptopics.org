@@ -31,7 +31,7 @@
 
   </div>
 
-  {{ Form::submit('Sign up!') }}
+  {{ Form::submit('Sign up!', array('class' => 'btn btn-primary btn-lg pull-right col-md-6')) }}
 
 </form>
 
