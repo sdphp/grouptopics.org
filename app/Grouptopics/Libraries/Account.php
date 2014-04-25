@@ -38,14 +38,14 @@ class Account
 
         if ($validator->passes()) {
 
-        	$user->name = Input::get('name');
+            $user->name = Input::get('name');
             $user->email = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
 
-        	$user->save();
+            $user->save();
 
-        	// log the user in
-        	$credentials = array(
+            // log the user in
+            $credentials = array(
                 'email' 	=> Input::get('email'),
                 'password' 	=> Input::get('password')
             );
@@ -55,7 +55,8 @@ class Account
             }
         }
 
-        return Redirect::route('signup')->withErrors($validator);
+        return Redirect::route('signup')
+            ->withErrors($validator);
     }
 
     public function loginExistingAccount()
