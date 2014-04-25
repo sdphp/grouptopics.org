@@ -9,10 +9,7 @@ use \Redirect as Redirect;
 
 class Account
 {
-    /**
-     * @param $id
-     * @return mixed
-     */
+
     public function getAccountByUserId($id)
 	{
 		return User::find($id);
@@ -23,9 +20,6 @@ class Account
 		return $username;
 	}
 
-    /**
-     * @return string
-     */
     public function createNewAccount()
 	{
 		$input = Input::all();
@@ -55,16 +49,13 @@ class Account
 			);
 
 			if (Auth::attempt($credentials)) {
-				return Redirect::to('/account');
+				return Redirect::route('auth.account');
 			}
 		}
 
-		return Redirect::to('/signup')->withErrors($validator);
+		return Redirect::route('signup')->withErrors($validator);
 	}
 
-    /**
-     * @return mixed
-     */
     public function loginExistingAccount()
 	{
 		$input = Input::all();
@@ -77,18 +68,12 @@ class Account
 		if ($attempt) return Redirect::intended('/account');
 	}
 
-    /**
-     * @return mixed
-     */
     public function logoutExistingAccount()
 	{
 		Auth::logout();
-		return Redirect::to('/');
+		return Redirect::route('home');
 	}
 
-    /**
-     *
-     */
     public function emailNewAccount()
 	{
 		// TODO - make this work!
