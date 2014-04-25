@@ -1,4 +1,5 @@
-<?php namespace Grouptopics\Libraries;
+<?php
+namespace Grouptopics\Libraries;
 
 use \Input as Input;
 use \Auth as Auth;
@@ -27,7 +28,7 @@ class Account
         $user = new User;
 
         $rules = array(
-            'name'   	=> 'required|min:5|max:125',
+            'name'		=> 'required|min:5|max:125',
             'email'     => 'required|email',
             'password' 	=> 'required|alpha_num|confirmed|min:8'
         );
@@ -45,8 +46,8 @@ class Account
 
         	// log the user in
         	$credentials = array(
-                'email' => Input::get('email'),
-                'password' => Input::get('password')
+                'email' 	=> Input::get('email'),
+                'password' 	=> Input::get('password')
             );
 
             if (Auth::attempt($credentials)) {
@@ -62,8 +63,8 @@ class Account
         $input = Input::all();
 
         $attempt = Auth::attempt([
-            'email' 	=> $input['email'],
-            'password' 	=> $input['password']
+            'email'    => $input['email'],
+            'password' => $input['password']
         ]);
 
         if ($attempt) {
