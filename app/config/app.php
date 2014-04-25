@@ -110,6 +110,7 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
+		'TwigBridge\TwigServiceProvider',
 
 	),
 
