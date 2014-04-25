@@ -28,9 +28,10 @@ class Account
         $user = new User;
 
         $rules = array(
-            'name'		=> 'required|min:5|max:125',
-            'email'     => 'required|email',
-            'password' 	=> 'required|alpha_num|confirmed|min:8'
+            'name'     => 'required|min:5|max:125',
+            'username' => 'required|min:5|max:125',
+            'email'    => 'required|email',
+            'password' => 'required|alpha_num|confirmed|min:8'
         );
 
         // TODO throw exceptions for if an email already exists
@@ -39,6 +40,7 @@ class Account
         if ($validator->passes()) {
 
             $user->name = Input::get('name');
+            $user->username = Input::get('username');
             $user->email = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
 
@@ -46,8 +48,8 @@ class Account
 
             // log the user in
             $credentials = array(
-                'email' 	=> Input::get('email'),
-                'password' 	=> Input::get('password')
+                'email'    => Input::get('email'),
+                'password' => Input::get('password')
             );
 
             if (Auth::attempt($credentials)) {
