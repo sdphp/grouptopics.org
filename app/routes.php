@@ -28,7 +28,7 @@ Route::get('/logout', array(
 
 Route::get('/profile/{username}', array(
 	'as' => 'profile.view',
-	'uses' =>'AccountController@showPublicProfile'
+	'uses' =>'AccountController@profileView'
 ));
 
 // GROUP requests requiring Auth

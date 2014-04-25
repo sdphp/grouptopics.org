@@ -7,22 +7,14 @@ use Grouptopics\Libraries\Account;
  */
 class AccountController extends BaseController
 {
-    /**
-     * @var Grouptopics\Libraries\Account
-     */
+
     protected $account;
 
-    /**
-     * @param AccountLibrary $account
-     */
     public function __construct(Account $account)
 	{
 		$this->account = $account;
 	}
 
-    /**
-     * @return \Illuminate\View\View
-     */
     public function account()
 	{
 		return View::make('account');
@@ -33,42 +25,27 @@ class AccountController extends BaseController
         return View::make('account_settings');
     }
 
-    /**
-     * @return \Illuminate\View\View
-     */
     public function signup()
 	{
 		return View::make('signup');
 	}
 
-    /**
-     * @return \Illuminate\View\View
-     */
     public function login()
 	{
 		return View::make('login');
 	}
 
-    /**
-     * @return string
-     */
     public function create()
 	{
 		return $this->account->createNewAccount();
 	}
 
-    /**
-     * @return mixed
-     */
     public function store()
 	{
 		return $this->account->loginExistingAccount();
 	}
 
-    /**
-     * @return mixed
-     */
-    public function destroy()
+    public function actionLogout()
 	{
 		return $this->account->logoutExistingAccount();
 	}
@@ -83,6 +60,11 @@ class AccountController extends BaseController
     {
         $user = User::find($username);
         return $user->name;
+    }
+
+    public function profileView($username)
+    {
+        return $username;
     }
 
 }

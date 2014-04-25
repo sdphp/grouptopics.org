@@ -5,12 +5,11 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-        "twitter/bootstrap": "3.0.*@dev",
+        "twitter/bootstrap": "3.*",
         "components/jquery": "1.11.*@dev",
         "jasonlewis/basset": "4.0.*@dev",
         "leafo/lessphp": "v0.3.9",
-		"guzzle/guzzle": "~3.7",
-		"rcrowe/twigbridge": "0.5.*"
+		"guzzle/guzzle": "~3.7"
 	},
 	"autoload": {
 		"classmap": [

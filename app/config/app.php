@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'url' => 'http://localhost',
+	'url' => 'http://grouptopics.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -110,7 +110,6 @@ return array(
         'Way\Generators\GeneratorsServiceProvider',
         'Barryvdh\Debugbar\ServiceProvider',
         'Clockwork\Support\Laravel\ClockworkServiceProvider',
-		'TwigBridge\TwigServiceProvider',
 
 	),
 
