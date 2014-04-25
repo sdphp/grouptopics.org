@@ -1,44 +1,71 @@
 <?php
 
 // GET requests
-Route::get('/', 'ViewController@index');
-Route::get('/about', array('as' => 'about', 'uses' => 'ViewController@about'));
-Route::get('/login', array('as' => 'login', 'uses' => 'AccountController@login'));
-Route::get('/signup', array('as' => 'signup', 'uses' => 'AccountController@signup'));
-Route::get('/logout', 'AccountController@destroy');
-// show the public profile, votes, topics, presentations and etc.
-Route::get('/profile/{username}', 'AccountController@showPublicProfile');
+Route::get('/', array(
+		'as' => 'home',
+		'uses' => 'ViewController@pageHome'
+));
 
+Route::get('/login', array(
+	'as' => 'login',
+	'uses' => 'ViewController@pageLogin'
+));
 
-// GROUPS requests requiring Auth
-Route::group(array('before' => 'auth'), function()
+Route::get('/about', array(
+	'as' => 'about',
+	'uses' => 'ViewController@pageAbout'
+));
+
+Route::get('/signup', array(
+	'as'=> 'signup',
+	'uses' => 'ViewController@pageSignup'
+));
+
+Route::get('/logout', array(
+	'as' => 'action.logout',
+	'uses' => 'AccountController@actionLogout'
+));
+
+Route::get('/profile/{username}', array(
+	'as' => 'profile.view',
+	'uses' =>'AccountController@showPublicProfile'
+));
+
+// GROUP requests requiring Auth
+Route::group(array(
+	'before' => 'auth'
+), function()
 {
-	Route::get('/account', 'AccountController@account');
-    Route::get('/account/settings', 'AccountController@accountSettings');
+	Route::get('/account', array(
+		'as' => 'auth.account',
+		'uses' => 'AccountController@account'
+	));
+
+    Route::get('/account/settings', array(
+		'as' => 'auth.account.settings',
+		'uses' => 'AccountController@accountSettings'
+	));
 });
 
+
 // POST requests
-Route::post('/signup', 'AccountController@create');
-Route::post('/login', 'AccountController@store');
+Route::post('/signup', array(
+	'as' => 'action.signup',
+	'uses' => 'AccountController@create'
+));
 
+Route::post('/login', array(
+	'as' => 'action.login',
+	'uses' => 'AccountController@store'
+));
 
-// GROUPS request that require admin privileges
-Route::group(array('prefix' => 'manage'), function()
+// GROUP request that require admin privileges
+Route::group(array(
+	'prefix' => 'manage'
+), function()
 {
     Route::get('manage', function()
     {
     	return "ADMIN!";
     });
-});
-
-
-// JUNK - for testing specific functions as needed
-Route::get('utils', function()
-{
-    // dd mysql configuration from database.php
-    // dd(Config::get('database.connections.mysql'));
-    // dd(App::environment());
-
-    // $users = User::all();
-    // dd($users);
 });
