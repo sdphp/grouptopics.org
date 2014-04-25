@@ -4,15 +4,15 @@
 
     {{ Form::label('name', 'Name') }}
     {{ Form::text('name', null, array('class' => 'form-control')) }}
-{#     {{ $errors->first('name', '<div class="alert alert-danger">:message</div>') }} #}
+    {{ $errors->first('name', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 
   <div class="form-group">
 
-  	{{ Form::label('email', 'E-Mail Address') }}
+    {{ Form::label('email', 'E-Mail Address') }}
     {{ Form::text('email', null, array('class' => 'form-control')) }}
-{#     {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }} #}
+    {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 
@@ -27,7 +27,7 @@
 
     {{ Form::label('password_confirmation', 'Password confirmation') }}
     {{ Form::password('password_confirmation', array('class' => 'form-control')) }}
-{#     {{ $errors->first('password', '<div class="alert alert-danger">:message</div>') }} #}
+    {{ $errors->first('password', '<div class="alert alert-danger">:message</div>') }}
 
   </div>
 
