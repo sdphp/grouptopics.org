@@ -66,10 +66,12 @@ class Account
     {
         $input = Input::all();
 
-        $attempt = Auth::attempt([
-            'email'    => $input['email'],
-            'password' => $input['password']
-        ]);
+        $attempt = Auth::attempt(
+            [
+                'email'    => $input['email'],
+                'password' => $input['password']
+            ]
+        );
 
         if ($attempt) {
             return Redirect::intended('/account');
