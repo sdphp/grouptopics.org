@@ -42,7 +42,7 @@ Route::get(
     '/profile/{username}',
         array(
             'as' => 'profile.view',
-            'uses' =>'AccountController@profileView'
+            'uses' =>'AccountController@showAccountByUsername'
         )
 );
 
