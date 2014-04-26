@@ -8,11 +8,11 @@ var coffee = require('gulp-coffee');
 var exec = require('child_process').exec;
 var sys = require('sys');
 
-var lessDir = 'vendor/twitter/bootstrap/less/';
+var lessDir = 'less/';
 var targetCSSDir = 'public/css/';
 
 gulp.task('css', function() {
-    return gulp.src(lessDir + 'bootstrap.less')
+    return gulp.src(lessDir + 'grouptopics.less')
         .pipe(less({style: 'compressed'}).on('error', gutil.log))
         .pipe(autoprefixer('last 10 versions'))
         .pipe(gulp.dest(targetCSSDir))

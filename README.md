@@ -17,7 +17,7 @@ Grouptopics is built using **[Laravel](https://packagist.org/packages/laravel/fr
 
 * Create ```app/config/development/database.php``` and enter your credentials for your local environment. See below:
 
-```
+```php
 <?php
 
 return [
