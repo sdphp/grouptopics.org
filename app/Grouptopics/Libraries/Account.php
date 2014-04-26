@@ -18,6 +18,7 @@ class Account
 
     public function getAccountByUsername($username)
     {
+        $username = DB::table('users')->where('username', '==', $username)->get();
         return $username;
     }
 
