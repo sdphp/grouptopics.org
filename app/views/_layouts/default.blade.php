@@ -33,12 +33,16 @@
 
     <p class="navbar-text pull-right">
 
-    <a href="/" class="navbar-link">Home</a>
+        <a href="/" class="navbar-link">Home</a>
+        <a href="/about" class="navbar-link">About</a>
         @if(Auth::check())
-        @include('_includes.account_navigation')
+        <a href="/account" class="navbar-link">{{Auth::user()->name}}</a>
+        <a href="/logout" class="navbar-link">Logout</a>
         @else
-        @include('_includes.public_navigation')
+        <a href="/signup" class="navbar-link">Signup</a>
+        <a href="/login" class="navbar-link">Login</a>
         @endif
+
     </p>
 
     </div>
