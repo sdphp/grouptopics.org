@@ -53,12 +53,14 @@ class AccountController extends BaseController
     public function showAccountById($id)
     {
         $user = User::find($id);
+
         return $user->name;
     }
 
     public function showAccountByUsername($username)
     {
         $user = User::find($username);
+
         return $user->name;
     }
 
@@ -66,5 +68,4 @@ class AccountController extends BaseController
     {
         return $username;
     }
-
 }
