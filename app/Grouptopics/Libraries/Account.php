@@ -30,7 +30,6 @@ class Account
 
         $rules = array(
             'name'     => 'required|min:3|max:125',
-            'username' => 'required|min:3|max:125|unique:users',
             'email'    => 'required|email|unique:users',
             'password' => 'required|alpha_num|confirmed|min:8'
         );
@@ -40,7 +39,6 @@ class Account
         if ($validator->passes()) {
 
             $user->name = Input::get('name');
-            $user->username = Input::get('username');
             $user->email = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
 
