@@ -1,3 +1,3 @@
+<a href="/account" class="navbar-link">{{Auth::user()->name}}</a>
 
-            :: {{Auth::user()->name}} ::
-            <a href="/logout" class="navbar-link" style="padding:42px">Logut</a>
+<a href="/logout" class="navbar-link">Logout</a>

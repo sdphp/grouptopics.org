@@ -57,13 +57,13 @@
 
             <div class="container">
 
-                <div class="col-md-8">
+                <div class="col-md-8 pull-right">
 
                     @yield('content')
 
                 </div>
 
-                <div id="sidebar" class="col-md-4">
+                <div id="sidebar" class="col-md-4 pull-left">
 
                     @yield('sidebar')
 
