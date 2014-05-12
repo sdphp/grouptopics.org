@@ -1,12 +1,12 @@
 <?php
 namespace Grouptopics\Libraries;
 
-use \Input as Input;
-use \Auth as Auth;
-use \User as User;
-use \Validator as Validator;
-use \Hash as Hash;
-use \Redirect as Redirect;
+use Auth as Auth;
+use Hash as Hash;
+use Input as Input;
+use Redirect as Redirect;
+use User as User;
+use Validator as Validator;
 
 class Account
 {
@@ -19,6 +19,7 @@ class Account
     public function getAccountByUsername($username)
     {
         $username = DB::table('users')->where('username', '==', $username)->get();
+
         return $username;
     }
 
@@ -38,8 +39,8 @@ class Account
 
         if ($validator->passes()) {
 
-            $user->name = Input::get('name');
-            $user->email = Input::get('email');
+            $user->name     = Input::get('name');
+            $user->email    = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
 
             $user->save();
@@ -78,6 +79,7 @@ class Account
     public function logoutExistingAccount()
     {
         Auth::logout();
+
         return Redirect::route('home');
     }
 

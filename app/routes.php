@@ -4,7 +4,7 @@
 Route::get(
     '/',
     array(
-        'as' => 'home',
+        'as'   => 'home',
         'uses' => 'ViewController@pageHome'
     )
 );
@@ -12,38 +12,41 @@ Route::get(
 Route::get(
     '/login',
     array(
-        'as' => 'login',
+        'as'   => 'login',
         'uses' => 'ViewController@pageLogin'
     )
 );
 
 Route::get(
-    '/about', array(
-        'as' => 'about',
+    '/about',
+    array(
+        'as'   => 'about',
         'uses' => 'ViewController@pageAbout'
     )
 );
 
 Route::get(
-    '/signup', array(
-        'as'=> 'signup',
+    '/signup',
+    array(
+        'as'   => 'signup',
         'uses' => 'ViewController@pageSignup'
     )
 );
 
 Route::get(
-    '/logout', array(
-        'as' => 'action.logout',
+    '/logout',
+    array(
+        'as'   => 'action.logout',
         'uses' => 'AccountController@actionLogout'
     )
 );
 
 Route::get(
     '/profile/{username}',
-        array(
-            'as' => 'profile.view',
-            'uses' =>'AccountController@showAccountByUsername'
-        )
+    array(
+        'as'   => 'profile.view',
+        'uses' => 'AccountController@showAccountByUsername'
+    )
 );
 
 // GROUP requests requiring Auth
@@ -51,39 +54,40 @@ Route::group(
     array(
         'before' => 'auth'
     ),
-    function() {
+    function () {
         Route::get(
-            '/account', array(
-                'as' => 'auth.account',
+            '/account',
+            array(
+                'as'   => 'auth.account',
                 'uses' => 'AccountController@account'
             )
         );
 
-    Route::get(
-        '/account/settings', array(
-            'as' => 'auth.account.settings',
-            'uses' => 'AccountController@accountSettings'
+        Route::get(
+            '/account/settings',
+            array(
+                'as'   => 'auth.account.settings',
+                'uses' => 'AccountController@accountSettings'
             )
         );
     }
 );
 
-
 // POST requests
 Route::post(
     '/signup',
-        array(
-            'as' => 'action.signup',
-            'uses' => 'AccountController@create'
-        )
+    array(
+        'as'   => 'action.signup',
+        'uses' => 'AccountController@create'
+    )
 );
 
 Route::post(
     '/login',
-        array(
-            'as' => 'action.login',
-            'uses' => 'AccountController@store'
-        )
+    array(
+        'as'   => 'action.login',
+        'uses' => 'AccountController@store'
+    )
 );
 
 // GROUP request that require admin privileges
@@ -91,10 +95,10 @@ Route::group(
     array(
         'prefix' => 'manage'
     ),
-    function() {
+    function () {
         Route::get(
             'manage',
-            function() {
+            function () {
                 return "ADMIN!";
             }
         );
