@@ -10,14 +10,6 @@
 
   <div class="form-group">
 
-    {{ Form::label('username', 'Username') }}
-    {{ Form::text('username', null, array('class' => 'form-control')) }}
-    {{ $errors->first('username', '<div class="alert alert-danger">:message</div>') }}
-
-  </div>
-
-  <div class="form-group">
-
     {{ Form::label('email', 'E-Mail Address') }}
     {{ Form::text('email', null, array('class' => 'form-control')) }}
     {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }}
