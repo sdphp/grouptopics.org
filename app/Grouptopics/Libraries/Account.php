@@ -29,13 +29,12 @@ class Account
         $user = new User;
 
         $rules = array(
-            'name'     => 'required|min:5|max:125',
-            'username' => 'required|min:5|max:125',
-            'email'    => 'required|email',
+            'name'     => 'required|min:3|max:125',
+            'username' => 'required|min:3|max:125|unique:users',
+            'email'    => 'required|email|unique:users',
             'password' => 'required|alpha_num|confirmed|min:8'
         );
 
-        // TODO throw exceptions for if an email already exists
         $validator = Validator::make($input, $rules);
 
         if ($validator->passes()) {
