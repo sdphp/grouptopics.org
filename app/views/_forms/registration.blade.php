@@ -10,7 +10,7 @@
 
   <div class="form-group">
 
-  	{{ Form::label('email', 'E-Mail Address') }}
+    {{ Form::label('email', 'E-Mail Address') }}
     {{ Form::text('email', null, array('class' => 'form-control')) }}
     {{ $errors->first('email', '<div class="alert alert-danger">:message</div>') }}
 
@@ -18,7 +18,7 @@
 
   <div class="form-group">
 
-  	{{ Form::label('password', 'Password') }}
+    {{ Form::label('password', 'Password') }}
     {{ Form::password('password', array('class' => 'form-control')) }}
 
   </div>
@@ -31,7 +31,7 @@
 
   </div>
 
-  {{ Form::submit('Sign up!') }}
+  {{ Form::submit('Sign up!', array('class' => 'btn btn-primary btn-lg pull-right col-md-6')) }}
 
 </form>
 
