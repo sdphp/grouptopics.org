@@ -40,9 +40,9 @@ return [
 ];
 ```
 
-* Run the application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisian serve```
+* Run the application with your choice of Webserver / MySQL /  [MariaDB](https://mariadb.org/). You can use [MAMP](https://www.mamp.info/), [WAMP](http://www.wampserver.com/en/), [Vagrant](http://www.vagrantup.com), or the Laravel built in ```php artisan serve```
 
-* Run ```php artisian migrate``` to create your tables
+* Run ```php artisan migrate``` to create your tables
 
 * Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp ```npm install gulp``` and run ```gulp``` from the commandline
 
