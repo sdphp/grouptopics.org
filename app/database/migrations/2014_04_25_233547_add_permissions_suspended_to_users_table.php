@@ -14,9 +14,12 @@ class AddPermissionsSuspendedToUsersTable extends Migration {
 	{
 		Schema::table('users', function(Blueprint $table)
 		{
-			$table->boolean('permissions')
+            $table
+                ->boolean('permissions')
                 ->default(1);
-			$table->boolean('suspended')
+
+            $table
+                ->boolean('suspended')
                 ->default(false);
 		});
 	}
