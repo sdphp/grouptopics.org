@@ -17,3 +17,19 @@ If you have an idea for a new feature you would like to see added to Grouptopics
 ## Coding Guidelines
 
 Grouptopics follows all of the [PHP-FIG coding standards](https://github.com/php-fig/fig-standards/tree/master/accepted) coding standards. In addition to these standards, Grouptopics also follows the [naming conventions](https://github.com/php-fig/fig-standards/blob/master/bylaws/002-psr-naming-conventions.md#naming-conventions-for-code-released-by-php-fig) for PHP-FIG.
+
+## Gush
+
+This project can be managed with [Gush](http://gushphp.org). To install Gush Globally run;
+
+```bash
+composer global require gushphp/gush=dev-master
+```
+
+Or download it as a phar:
+
+```bash
+phar curl -sS http://gushphp.org/installer | php
+```
+
+For more information check out the [Gush](https://github.com/gushphp/gush) repo.
