@@ -16,7 +16,7 @@
 
   </div>
 
-  {{ Form::submit('Login') }}
+  {{ Form::submit('Login', array('class' => 'btn btn-primary btn-lg pull-right col-md-6')) }}
 
 </form>
 

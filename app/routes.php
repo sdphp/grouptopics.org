@@ -1,24 +1,102 @@
 <?php
 
 // GET requests
-Route::get('/', 'ViewController@index');
-Route::get('/about', 'ViewController@about');
-Route::get('/login', 'AccountController@login');
-Route::get('/signup', 'AccountController@signup');
-Route::get('/account', 'AccountController@index')->before('auth');
-Route::get('/logout', 'AccountController@destroy');
+Route::get(
+    '/',
+    array(
+        'as' => 'home',
+        'uses' => 'ViewController@pageHome'
+    )
+);
 
-// JUNK - for testing specific functions as needed
-Route::get('utils', function()
-{
-	// dd mysql configuration from database.php
-	// dd(Config::get('database.connections.mysql'));
+Route::get(
+    '/login',
+    array(
+        'as' => 'login',
+        'uses' => 'ViewController@pageLogin'
+    )
+);
 
-	$users = User::all();
-	dd($users);
+Route::get(
+    '/about', array(
+        'as' => 'about',
+        'uses' => 'ViewController@pageAbout'
+    )
+);
 
-});
+Route::get(
+    '/signup', array(
+        'as'=> 'signup',
+        'uses' => 'ViewController@pageSignup'
+    )
+);
+
+Route::get(
+    '/logout', array(
+        'as' => 'action.logout',
+        'uses' => 'AccountController@actionLogout'
+    )
+);
+
+Route::get(
+    '/profile/{username}',
+        array(
+            'as' => 'profile.view',
+            'uses' =>'AccountController@showAccountByUsername'
+        )
+);
+
+// GROUP requests requiring Auth
+Route::group(
+    array(
+        'before' => 'auth'
+    ),
+    function() {
+        Route::get(
+            '/account', array(
+                'as' => 'auth.account',
+                'uses' => 'AccountController@account'
+            )
+        );
+
+    Route::get(
+        '/account/settings', array(
+            'as' => 'auth.account.settings',
+            'uses' => 'AccountController@accountSettings'
+            )
+        );
+    }
+);
+
 
 // POST requests
-Route::post('/signup', 'AccountController@create');
-Route::post('/login', 'AccountController@store');
+Route::post(
+    '/signup',
+        array(
+            'as' => 'action.signup',
+            'uses' => 'AccountController@create'
+        )
+);
+
+Route::post(
+    '/login',
+        array(
+            'as' => 'action.login',
+            'uses' => 'AccountController@store'
+        )
+);
+
+// GROUP request that require admin privileges
+Route::group(
+    array(
+        'prefix' => 'manage'
+    ),
+    function() {
+        Route::get(
+            'manage',
+            function() {
+                return "ADMIN!";
+            }
+        );
+    }
+);
