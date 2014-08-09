@@ -15,3 +15,4 @@ Vagrantfile
 tags
 node_modules
 _ide_helper.php
+.idea

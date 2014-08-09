@@ -8,6 +8,7 @@ div.phpdebugbar-header {
     background-size: 20px;
     line-height: 17px;
 }
+
 a.phpdebugbar-restore-btn {
     background: #efefef url(laravel-icon.png) no-repeat 5px 3px;
     background-size: 20px;
@@ -23,11 +24,11 @@ div.phpdebugbar-header .phpdebugbar-tab {
     padding: 5px 6px;
 }
 
-div.phpdebugbar .phpdebugbar-header select{
+div.phpdebugbar .phpdebugbar-header select {
     padding: 1px 0;
 }
 
-dl.phpdebugbar-widgets-kvlist dt{
+dl.phpdebugbar-widgets-kvlist dt {
     width: 200px;
 }
 

@@ -11,7 +11,7 @@ var sys = require('sys');
 var lessDir = 'less/';
 var targetCSSDir = 'public/css/';
 
-gulp.task('css', function() {
+gulp.task('css', function () {
     return gulp.src(lessDir + 'grouptopics.less')
         .pipe(less({style: 'compressed'}).on('error', gutil.log))
         .pipe(autoprefixer('last 10 versions'))
@@ -19,13 +19,13 @@ gulp.task('css', function() {
         .pipe(notify('CSS compiled, prefixed, and minified'))
 });
 
-gulp.task('phpunit', function() {
-    exec('phpunit', function(error, stdout) {
+gulp.task('phpunit', function () {
+    exec('phpunit', function (error, stdout) {
         sys.puts(stdout);
     });
 });
 
-gulp.task('watch', function(){
+gulp.task('watch', function () {
     gulp.watch(lessDir + 'bootstrap.less', ['css']);
     gulp.watch('app/**/*.php', ['phpunit']);
 });

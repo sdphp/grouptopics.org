@@ -1,11 +1,11 @@
 {
-  "devDependencies": {
-    "gulp": "~3.6.0",
-    "gulp-util": "~2.2.14",
-    "gulp-ruby-sass": "~0.4.3",
-    "gulp-coffee": "~1.4.1",
-    "gulp-notify": "~1.2.5",
-    "gulp-autoprefixer": "0.0.7",
-    "gulp-less": "~1.2.3"
-  }
+    "devDependencies": {
+        "gulp": "~3.6.0",
+        "gulp-util": "~2.2.14",
+        "gulp-ruby-sass": "~0.4.3",
+        "gulp-coffee": "~1.4.1",
+        "gulp-notify": "~1.2.5",
+        "gulp-autoprefixer": "0.0.7",
+        "gulp-less": "~1.2.3"
+    }
 }
