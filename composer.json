@@ -4,10 +4,9 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*",
+		"laravel/framework": "4.2.*",
         "twitter/bootstrap": "3.*",
         "components/jquery": "1.11.*@dev",
-        "jasonlewis/basset": "4.0.*@dev",
         "leafo/lessphp": "v0.3.9",
 		"guzzle/guzzle": "~3.7"
 	},
