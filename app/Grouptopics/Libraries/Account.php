@@ -38,8 +38,8 @@ class Account
 
         if ($validator->passes()) {
 
-            $user->name = Input::get('name');
-            $user->email = Input::get('email');
+            $user->name     = Input::get('name');
+            $user->email    = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
 
             $user->save();

@@ -44,7 +44,10 @@ return [
 
 * Run ```php artisan migrate``` to create your tables
 
-* Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp ```npm install gulp``` and run ```gulp``` from the commandline
+* Gulp configured to compile Twitter Bootstrap Less File to CSS and will run phpunit when PHP files are save. To enable simple install gulp and the gulp components 
+```npm install gulp gulp-util gulp-notify gulp-ruby-sass gulp-less gulp-autoprefixer gulp-coffee``` 
+and run ```gulp``` from the commandline
+
 
 ## License
 
