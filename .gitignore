@@ -9,6 +9,8 @@ Thumbs.db
 app/config/database.php
 app/config/development
 app/config/homestead
+app/config/local
+app/config/localhost
 puphpet
 Vagrantfile
 .vagrant
