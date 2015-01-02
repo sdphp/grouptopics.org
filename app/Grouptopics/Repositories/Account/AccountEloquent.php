@@ -1,19 +1,22 @@
 <?php
-namespace Grouptopics\Libraries;
+namespace Grouptopics\Repositories\Account;
 
-use \Input as Input;
-use \Auth as Auth;
-use \User as User;
-use \Validator as Validator;
-use \Hash as Hash;
-use \Redirect as Redirect;
+use Grouptopics\Repositories\EloquentRepository;
 
-class Account
+
+class AccountEloquent extends EloquentRepository implements AccountInterface
 {
+
+    protected $model;
+
+    public function __construct(\User $model)
+    {
+        $this->model = $model;
+    }
 
     public function getAccountByUserId($id)
     {
-        return User::find($id);
+        return \User::find($id);
     }
 
     public function getAccountByUsername($username)
@@ -24,9 +27,7 @@ class Account
 
     public function createNewAccount()
     {
-        $input = Input::all();
-
-        $user = new User;
+        $input = \Input::all();
 
         $rules = array(
             'name'     => 'required|min:3|max:125',
@@ -34,36 +35,36 @@ class Account
             'password' => 'required|alpha_num|confirmed|min:8'
         );
 
-        $validator = Validator::make($input, $rules);
+        $validator = \Validator::make($input, $rules);
 
         if ($validator->passes()) {
 
-            $user->name     = Input::get('name');
-            $user->email    = Input::get('email');
-            $user->password = Hash::make(Input::get('password'));
+            $this->model->name     = $input['name'];
+            $this->model->email    = $input['email'];
+            $this->model->password = \Hash::make($input['password']);
 
-            $user->save();
+            $this->model->save();
 
             // log the user in
             $credentials = array(
-                'email'    => Input::get('email'),
-                'password' => Input::get('password')
+                'email'    => $input['email'],
+                'password' => $input['password']
             );
 
-            if (Auth::attempt($credentials)) {
-                return Redirect::route('auth.account');
+            if (\Auth::attempt($credentials)) {
+                return \Redirect::route('auth.account');
             }
         }
 
-        return Redirect::route('signup')
+        return \Redirect::route('signup')
             ->withErrors($validator);
     }
 
     public function loginExistingAccount()
     {
-        $input = Input::all();
+        $input = \Input::all();
 
-        $attempt = Auth::attempt(
+        $attempt = \Auth::attempt(
             [
                 'email'    => $input['email'],
                 'password' => $input['password']
@@ -71,14 +72,14 @@ class Account
         );
 
         if ($attempt) {
-            return Redirect::intended('/account');
+            return \Redirect::intended('/account');
         }
     }
 
     public function logoutExistingAccount()
     {
-        Auth::logout();
-        return Redirect::route('home');
+        \Auth::logout();
+        return \Redirect::route('home');
     }
 
     public function emailNewAccount()

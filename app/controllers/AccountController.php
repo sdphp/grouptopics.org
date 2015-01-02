@@ -1,18 +1,15 @@
 <?php
 
-use Grouptopics\Libraries\Account;
+use Grouptopics\Repositories\Account\AccountInterface;
 
-/**
- * Class AccountController
- */
-class AccountController extends BaseController
+class AccountController extends \BaseController
 {
 
-    protected $account;
+    protected $accountInterface;
 
-    public function __construct(Account $account)
+    public function __construct(AccountInterface $accountInterface)
     {
-        $this->account = $account;
+        $this->accountInterface = $accountInterface;
     }
 
     public function account()
@@ -37,17 +34,17 @@ class AccountController extends BaseController
 
     public function create()
     {
-        return $this->account->createNewAccount();
+        return $this->accountInterface->createNewAccount();
     }
 
     public function store()
     {
-        return $this->account->loginExistingAccount();
+        return $this->accountInterface->loginExistingAccount();
     }
 
     public function actionLogout()
     {
-        return $this->account->logoutExistingAccount();
+        return $this->accountInterface->logoutExistingAccount();
     }
 
     public function showAccountById($id)
