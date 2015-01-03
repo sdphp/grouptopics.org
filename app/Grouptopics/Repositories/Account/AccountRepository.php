@@ -4,7 +4,7 @@ namespace Grouptopics\Repositories\Account;
 use Grouptopics\Repositories\EloquentRepository;
 
 
-class AccountEloquent extends EloquentRepository implements AccountInterface
+class AccountRepository extends EloquentRepository implements AccountInterface
 {
 
     protected $model;
