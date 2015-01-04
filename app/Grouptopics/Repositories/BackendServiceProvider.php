@@ -10,7 +10,7 @@ class BackendServiceProvider extends ServiceProvider
 
         $this->app->bind(
             'Grouptopics\Repositories\Account\AccountInterface',
-            'Grouptopics\Repositories\Account\AccountEloquent'
+            'Grouptopics\Repositories\Account\AccountRepository'
         );
 
 

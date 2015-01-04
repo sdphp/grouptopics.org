@@ -4,7 +4,7 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "98ecd70c0a589bfc318ad923d9adb0e9",
+    "hash": "75a9153a905f8aac58f3abfeb57b0a74",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -1985,7 +1985,7 @@
     "packages-dev": [
         {
             "name": "barryvdh/laravel-debugbar",
-            "version": "dev-master",
+            "version": "v1.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/barryvdh/laravel-debugbar.git",
@@ -2289,8 +2289,7 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "components/jquery": 20,
-        "barryvdh/laravel-debugbar": 20
+        "components/jquery": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
